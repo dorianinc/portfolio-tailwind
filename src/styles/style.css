@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  flex-direction: column;
+  font-optical-sizing: auto;
+  background-color: #f4f4f4;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+#divider {
+  font-weight: 600;
+}
+
+#app-counter {
+  font-family: "Passion One", sans-serif;
+  font-optical-sizing: auto;
+  color: #333;
+}
+
+#app-counter:hover {
+  color:  #FFA500;
+}
