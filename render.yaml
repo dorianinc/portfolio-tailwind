@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: my-portfolio
+    buildCommand: npm run build
+    startCommand: npm start
+    staticPublishPath: ./src
+    routes:
+      - src: /*
+        dest: /index.html
