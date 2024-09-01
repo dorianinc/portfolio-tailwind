@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const navbar = createNavbar();
   const introSection = createIntroSection();
@@ -137,7 +136,7 @@ const createIntroSection = () => {
 
   const profileImg = document.createElement("img");
   profileImg.className = "h-80 w-80 rounded-full";
-  profileImg.src = "images/avatar.jpg";
+  profileImg.src = "./assets/images/avatar.jpg";
   profileImg.alt = "profile-pic";
   profileImgContainer.append(profileImg);
 
@@ -151,17 +150,21 @@ const createIntroSection = () => {
   techStackContainer.append(techStackTitle);
 
   const techStacks = [
-    { src: "images/languages/html5.png", alt: "HTML 5", text: "HTML 5" },
-    { src: "images/languages/css3.png", alt: "CSS 3", text: "CSS 3" },
     {
-      src: "images/languages/javascript.png",
+      src: "./assets/images/languages/html5.png",
+      alt: "HTML 5",
+      text: "HTML 5",
+    },
+    { src: "./assets/images/languages/css3.png", alt: "CSS 3", text: "CSS 3" },
+    {
+      src: "./assets/images/languages/javascript.png",
       alt: "Javascript",
       text: "Javascript",
     },
-    { src: "images/languages/python.png", alt: "Python", text: "Python" },
-    { src: "images/languages/react.png", alt: "React", text: "React" },
-    { src: "images/languages/node.png", alt: "Node", text: "Node" },
-    { src: "images/languages/flask.png", alt: "Flask", text: "Flask" },
+    { src: "./assets/images/languages/python.png", alt: "Python", text: "Python" },
+    { src: "./assets/images/languages/react.png", alt: "React", text: "React" },
+    { src: "./assets/images/languages/node.png", alt: "Node", text: "Node" },
+    { src: "./assets/images/languages/flask.png", alt: "Flask", text: "Flask" },
   ];
 
   techStacks.forEach((stack) => {
@@ -209,7 +212,7 @@ const createAboutSection = () => {
 
   const aboutImg = document.createElement("img");
   aboutImg.className = "h-80 w-96 rounded-lg";
-  aboutImg.src = "images/laptop.jpeg";
+  aboutImg.src = "./assets/images/laptop.jpeg";
   aboutImg.alt = "random-laptop";
   imgContainer.append(aboutImg);
 
@@ -273,7 +276,7 @@ const createProjectsSection = () => {
       title: "LilyPad",
       description: `Lilypad is a fullstack single-page AirBnB clone where property owners can post their homes or rooms for travelers to rent. Renters can search for unique accommodations in various locations and leave reviews after their stay.
                        My very first fullstack project, it was super fun! AirBnB has a really clean an simple UI but once I really dug into it, I found out how much went into it which blew me away.`,
-      imgSrc: "images/projects/lilypad.png",
+      imgSrc: "./assets/images/projects/lilypad.png",
       codeLink: "https://github.com/dorianinc/Lilypad",
       demoLink: "https://lilypad.onrender.com",
     },
@@ -282,7 +285,7 @@ const createProjectsSection = () => {
       title: "Mango Music",
       description: `Mango Music is a fullstack single-page Apple Music clone where a user can listen and like songs uploaded by artists and add those songs to a playlist.
                        Most difficult part of this project was the playlist feature which allows user to create playlist with their favorite music. The most rewarding part of this project was definitely being able to work on with such an amazing team individuals!`,
-      imgSrc: "images/projects/mango.png",
+      imgSrc: "./assets/images/projects/mango.png",
       codeLink: "https://github.com/Mango-WorldWide/Mango-Music",
       demoLink: "https://mango-music-4c4k.onrender.com",
     },
@@ -291,7 +294,7 @@ const createProjectsSection = () => {
       title: "Phaunos",
       description: `Phaunos is a fullstack single-page AllTrails clone where a user can find hiking trails in their area, add those trails to a list and leave reviews describing their experiences.
                        I built the site all on my own, it was definitely passion project because I love the outdoors. I learned a lot about Redux and Python along the way! As well as how to use the Google Maps and OpenWeather API.`,
-      imgSrc: "images/projects/phaunos.png",
+      imgSrc: "./assets/images/projects/phaunos.png",
       codeLink: "https://github.com/dorianinc/Phaunos",
       demoLink: "https://phaunos.onrender.com",
     },
@@ -319,7 +322,7 @@ const createProjectsSection = () => {
     const textContent = document.createElement("div");
     textContent.className = "p-4 h-full sm:p-7";
     textContainer.append(textContent);
-    
+
     if (i % 2 !== 0) {
       projectCard.append(textContainer);
       projectCard.append(imgContainer);
