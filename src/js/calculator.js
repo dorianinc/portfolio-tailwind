@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
-  initializeAppContainer();
+const createCalculator = () => {
+  initializeApp();
   const screen = setupDisplayScreen();
   const buttons = setupButtonsContainer();
 
@@ -36,7 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const app = document.querySelector(".app");
   app.append(screen, buttons);
-});
+};
+
 
 class ListNode {
   constructor(data) {
