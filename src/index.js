@@ -216,7 +216,7 @@ const createAboutSection = () => {
 
   const aboutImg = document.createElement("img");
   aboutImg.className = "h-80 w-96 rounded-lg";
-  aboutImg.src = "./assets/laptop.jpeg";
+  aboutImg.src = "./assets/images/laptop.jpeg";
   aboutImg.alt = "random-laptop";
   imgContainer.append(aboutImg);
 
