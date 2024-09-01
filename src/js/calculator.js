@@ -1,5 +1,5 @@
-const createCalculator = () => {
-  initializeApp();
+document.addEventListener("DOMContentLoaded", () => {
+  initializeAppContainer();
   const screen = setupDisplayScreen();
   const buttons = setupButtonsContainer();
 
@@ -36,7 +36,15 @@ const createCalculator = () => {
 
   const app = document.querySelector(".app");
   app.append(screen, buttons);
-};
+});
+
+class ListNode {
+  constructor(data) {
+    this.data = data; // will hold the current key
+    this.next = null; // will hold the latest state of the calculator
+    this.prev = null; // will hold the previous state of the calculator
+  }
+}
 
 const state = {
   equation: null,
@@ -48,9 +56,45 @@ const state = {
 const operationKeys = ["÷", "x", "-", "+", "Enter"];
 const diceKeys = ["d%", "dx", "d4", "d6", "d8", "d10", "d12", "d20"];
 
-const initializeApp = () => {
-  const app = document.querySelector(".app");
-  app.setAttribute("id", "app-calculator");
+const initializeAppContainer = () => {
+  const body = document.querySelector(".body");
+  body.style.backgroundColor = "grey"
+
+  const topDiv = document.createElement("div");
+  topDiv.className = "banner"
+  body.append(topDiv)
+
+  const navButton = document.createElement("div")
+  navButton.id = "back-button"
+  topDiv.append(navButton)
+
+  const backArrow = document.createElement("button")
+  backArrow.className = "fa-solid fa-arrow-left fa-2xl"
+  backArrow.id = "back-arrow"
+  navButton.append(backArrow)
+
+  const backText = document.createElement("h2")
+  backText.innerText = "Back"
+  navButton.append(backText)
+
+  navButton.addEventListener("click", (event) => {
+    window.history.back();
+  });
+
+  const title = document.createElement("h1");
+  title.id = "site-name";
+  title.innerText = "The App Counter";
+  topDiv.append(title);
+
+
+  const main = document.createElement("div");
+  main.className = "main";
+  body.append(main);
+
+  const app = document.createElement("div");
+  app.className = "app";
+  app.id = "app-calculator";
+  main.append(app);
 };
 
 const setupDisplayScreen = () => {
@@ -100,7 +144,7 @@ const createKey = (key) => {
     const img = document.createElement("img");
     img.setAttribute("alt", "d20");
     img.setAttribute("id", "dice");
-    img.setAttribute("src", "./images/apps/dice.png");
+    img.setAttribute("src", "./assets/images/dice.png");
     button.append(img);
   }
 
@@ -206,5 +250,3 @@ const handleLogic = () => {
   displayNumber.innerText = Math.floor(eval(equation));
   resetCalc();
 };
-
-export default createCalculator;

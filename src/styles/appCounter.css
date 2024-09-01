@@ -1,7 +1,6 @@
 body {
   display: flex;
   flex-direction: column;
-  font-family: Arial, sans-serif;
   font-optical-sizing: auto;
   background-color: #f4f4f4;
   height: 100vh;
@@ -11,13 +10,51 @@ body {
   background-color: grey;
 }
 
+
+.banner{
+  display: flex;
+  padding: 50px;
+  align-items: center;
+}
 #site-name {
+  margin: auto;
   font-family: "Passion One", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-size: 75px;
   text-align: center;
   color: #333;
+}
+
+#back-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Passion One", sans-serif;
+  font-optical-sizing: auto;
+  color: #333;
+  font-size: 20px;
+  font-weight: 100;
+  cursor: pointer; /* Add cursor pointer to the whole button */
+}
+
+#back-arrow {
+  border: 2px solid #333; /* Border color matches the arrow color */
+  border-radius: 50%; /* Makes the button round */
+  color: #333; /* Arrow color */
+  background-color: transparent; /* Transparent background */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#back-button:hover, 
+#back-button:hover #back-arrow, 
+#back-button:hover h2 {
+  color: #555; /* Darker color for both the arrow and text on hover */
+  border-color: #555; /* Match the border color of the arrow on hover */
 }
 
 .main {
@@ -42,7 +79,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 550px;
-  width: 450px;
+  width: 425px;
   gap: 30px;
   background-color: #667943;
 }
