@@ -59,7 +59,6 @@ const diceKeys = ["d%", "dx", "d4", "d6", "d8", "d10", "d12", "d20"];
 
 const initializeApp = () => {
   const body = document.querySelector(".body");
-  console.log("🖥️  body: ", body)
   body.style.backgroundColor = "grey";
 
   const topDiv = document.createElement("div");
