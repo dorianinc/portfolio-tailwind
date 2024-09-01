@@ -40,19 +40,21 @@ const createNavbar = () => {
     { url: "#about-me", text: "About" },
     { url: "#projects", text: "Projects" },
     { url: "#contact-me", text: "Contact" },
-    { url: "/theappcontainer", text: "The App Counter" },
+    { url: "/apps", text: "The App Counter" },
   ];
 
   pageLinks.forEach((link) => {
     const aTag = document.createElement("a");
-    if (link.text === "The App Counter") {
+
+    if (link.url === "/apps") {
       const divider = document.createElement("span");
+
       divider.id = "divider";
       divider.innerText = "|";
       linksContainer.append(divider);
-
       aTag.id = "app-counter";
     }
+
     aTag.href = link.url;
     aTag.className = "font-medium text-lg text-gray-950 hover:text-blue-500";
     aTag.innerText = link.text;
