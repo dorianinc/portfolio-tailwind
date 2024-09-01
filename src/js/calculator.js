@@ -58,34 +58,34 @@ const diceKeys = ["d%", "dx", "d4", "d6", "d8", "d10", "d12", "d20"];
 
 const initializeAppContainer = () => {
   const body = document.querySelector(".body");
-  body.style.backgroundColor = "grey"
+  body.style.backgroundColor = "grey";
 
   const topDiv = document.createElement("div");
-  topDiv.className = "banner"
-  body.append(topDiv)
+  topDiv.className = "banner";
+  body.append(topDiv);
 
-  const navButton = document.createElement("div")
-  navButton.id = "back-button"
-  topDiv.append(navButton)
+  const navButton = document.createElement("div");
+  navButton.id = "back-button";
+  topDiv.append(navButton);
 
-  const backArrow = document.createElement("button")
-  backArrow.className = "fa-solid fa-arrow-left fa-2xl"
-  backArrow.id = "back-arrow"
-  navButton.append(backArrow)
+  const backArrow = document.createElement("button");
+  backArrow.className = "fa-solid fa-arrow-left fa-2xl";
+  backArrow.id = "back-arrow";
+  navButton.append(backArrow);
 
-  const backText = document.createElement("h2")
-  backText.innerText = "Back"
-  navButton.append(backText)
+  const backText = document.createElement("h2");
+  backText.innerText = "Back";
+  navButton.append(backText);
 
   navButton.addEventListener("click", (event) => {
     window.history.back();
+    zz;
   });
 
   const title = document.createElement("h1");
   title.id = "site-name";
   title.innerText = "The App Counter";
   topDiv.append(title);
-
 
   const main = document.createElement("div");
   main.className = "main";
@@ -250,3 +250,5 @@ const handleLogic = () => {
   displayNumber.innerText = Math.floor(eval(equation));
   resetCalc();
 };
+
+export default createCalculator;
