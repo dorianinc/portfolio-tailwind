@@ -108,7 +108,7 @@ const createKey = (key) => {
     const img = document.createElement("img");
     img.setAttribute("alt", "d20");
     img.setAttribute("id", "dice");
-    img.setAttribute("src", "./assets/images/dice.png");
+    img.setAttribute("src", "./images/dice.png");
     button.append(img);
   }
 
