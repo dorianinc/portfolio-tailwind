@@ -49,22 +49,8 @@ const operationKeys = ["÷", "x", "-", "+", "Enter"];
 const diceKeys = ["d%", "dx", "d4", "d6", "d8", "d10", "d12", "d20"];
 
 const initializeApp = () => {
-  const body = document.querySelector(".h-full");
-  body.style.backgroundColor = "grey"
-
-  const header = document.createElement("h1");
-  header.id = "site-name";
-  header.innerText = "The App Counter!!";
-  body.append(header);
-
-  const main = document.createElement("div");
-  main.className = "main";
-  body.append(main);
-
-  const app = document.createElement("div");
-  app.className = "app";
-  app.id = "app-calculator";
-  main.append(app);
+  const app = document.querySelector(".app");
+  app.setAttribute("id", "app-calculator");
 };
 
 const setupDisplayScreen = () => {
