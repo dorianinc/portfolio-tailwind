@@ -40,7 +40,7 @@ const initializePortfolio = () => {
       { url: "#about-me", text: "About" },
       { url: "#projects", text: "Projects" },
       { url: "#contact-me", text: "Contact" },
-      { url: "/apps", text: "The App Counter" },
+      // { url: "/apps", text: "The App Counter" },
     ];
   
     pageLinks.forEach((link) => {
