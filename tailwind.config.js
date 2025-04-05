@@ -19,3 +19,6 @@ module.exports = {
   },
   plugins: [require("preline/plugin")],
 };
+
+
+// container.className = "mx-auto w-full lg:w-5/6 xl:w-3/4";
