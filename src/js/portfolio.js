@@ -165,20 +165,20 @@ const createIntroSection = () => {
       alt: "HTML 5",
       text: "HTML 5",
     },
-    { src: "./assets/images/languages/css3.png", alt: "CSS 3", text: "CSS 3" },
-    {
-      src: "./assets/images/languages/javascript.png",
-      alt: "Javascript",
-      text: "Javascript",
-    },
-    {
-      src: "./assets/images/languages/python.png",
-      alt: "Python",
-      text: "Python",
-    },
-    { src: "./assets/images/languages/react.png", alt: "React", text: "React" },
-    { src: "./assets/images/languages/node.png", alt: "Node", text: "Node" },
-    { src: "./assets/images/languages/flask.png", alt: "Flask", text: "Flask" },
+    // { src: "./assets/images/languages/css3.png", alt: "CSS 3", text: "CSS 3" },
+    // {
+    //   src: "./assets/images/languages/javascript.png",
+    //   alt: "Javascript",
+    //   text: "Javascript",
+    // },
+    // {
+    //   src: "./assets/images/languages/python.png",
+    //   alt: "Python",
+    //   text: "Python",
+    // },
+    // { src: "./assets/images/languages/react.png", alt: "React", text: "React" },
+    // { src: "./assets/images/languages/node.png", alt: "Node", text: "Node" },
+    // { src: "./assets/images/languages/flask.png", alt: "Flask", text: "Flask" },
   ];
 
   techStacks.forEach((stack) => {
