@@ -280,68 +280,6 @@ const createProjectsSection = () => {
   projectsGrid.style.border = "4 px solid blue";
   container.append(projectsGrid);
 
-  projects.forEach((project, i) => {
-    const projectCard = document.createElement("div");
-    projectCard.id = project.id;
-    projectCard.className =
-      "flex flex-col justify-between gap-5 items-center h-30-rem w-4/5 mx-auto border shadow-sm rounded-xl bg-white box-content p-5";
-
-    if (i % 2 !== 0) {
-      projectCard.classList.add("xl:flex-row");
-    } else {
-      projectCard.classList.add("xl:flex-row-reverse");
-    }
-
-    projectsGrid.append(projectCard);
-
-    const imgContainer = document.createElement("div");
-    imgContainer.className = "flex justify-center items-center w-8/12 h-full min-w-[210px] max-w-[700px]";
-
-    const img = document.createElement("img");
-    img.className = "border shadow-lg rounded-xl";
-    img.src = project.imgSrc;
-    img.alt = project.title;
-    imgContainer.append(img);
-
-    const textContainer = document.createElement("div");
-    textContainer.className = "text-center xl:text-left xl:w-4/12";
-
-    const textContent = document.createElement("div");
-    textContent.className = "h-full";
-    textContainer.append(textContent);
-
-    projectCard.append(imgContainer);
-    projectCard.append(textContainer);
-
-    const projectTitle = document.createElement("h3");
-    projectTitle.className = "text-lg font-bold text-gray-800";
-    projectTitle.innerText = project.title;
-    textContent.append(projectTitle);
-
-    const projectDescription = document.createElement("p");
-    projectDescription.className =
-      "my-2 text-gray-800 dark:text-gray-400 project-desc";
-    textContent.append(projectDescription);
-
-    const linksContainer = document.createElement("ul");
-    linksContainer.className = "flex justify-center gap-x-3";
-    textContent.append(linksContainer);
-
-    const codeLink = document.createElement("li");
-    const codeAnchor = document.createElement("a");
-    codeAnchor.href = project.codeLink;
-    codeAnchor.innerHTML = `Code <i class="fa-brands fa-github fa-lg"></i>`;
-    codeLink.append(codeAnchor);
-    linksContainer.append(codeLink);
-
-    const demoLink = document.createElement("li");
-    const demoAnchor = document.createElement("a");
-    demoAnchor.href = project.demoLink;
-    demoAnchor.innerHTML = `Live Demo <i class="fa-solid fa-arrow-up-right-from-square fa-lg"></i>`;
-    demoLink.append(demoAnchor);
-    linksContainer.append(demoLink);
-  });
-
   return section;
 };
 
@@ -366,7 +304,7 @@ const createContactMeSection = () => {
   headerContainer.append(mainTitle);
 
   const subTitle = document.createElement("h2");
-  subTitle.className = "text:-xs md:text-xl font-bold tracking-tight";
+  subTitle.className = "text-xl font-bold tracking-tight";
   subTitle.innerText =
     "I'm always open to connect with fellow tech enthusiasts and explore new opportunities. Please don't hesitate to reach out!";
   headerContainer.append(subTitle);
@@ -381,30 +319,8 @@ const createContactMeSection = () => {
   // Name/Email container
   const inputContainer = document.createElement("div");
   inputContainer.id = "name-email-container";
-  inputContainer.className = "flex flex-col lg:flex-row justify-between gap-5";
+  inputContainer.className = "hidden lg:flex justify-between gap-4";
   form.append(inputContainer);
-
-  // Name Input
-  const nameInput = document.createElement("input");
-  nameInput.type = "text";
-  nameInput.name = "name";
-  nameInput.id = "name";
-  nameInput.placeholder = "Name";
-  nameInput.required = true;
-  nameInput.className =
-    "py-3 px-4 block h-14 w-full border-2 border-gray-200 rounded-md text-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500";
-    inputContainer.append(nameInput);
-
-  // Email Input
-  const emailInput = document.createElement("input");
-  emailInput.type = "email";
-  emailInput.name = "email";
-  emailInput.id = "email";
-  emailInput.placeholder = "Email";
-  emailInput.required = true;
-  emailInput.className =
-    "py-3 px-4 h-14 w-full border-2 border-gray-200 rounded-md text-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500";
-    inputContainer.append(emailInput);
 
   // Subject Input
   const subjectInput = document.createElement("input");
@@ -414,9 +330,8 @@ const createContactMeSection = () => {
   subjectInput.placeholder = "Subject";
   subjectInput.required = true;
   subjectInput.className =
-  "py-3 px-4 block h-14 w-full border-2 border-gray-200 rounded-md text-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500";
+    "py-3 px-4 block h-14 w-full border-2 border-gray-200 rounded-md text-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500";
   form.append(subjectInput);
-
 
   // Message Textarea
   const messageTextarea = document.createElement("textarea");
@@ -451,23 +366,119 @@ const createContactMeSection = () => {
 
 const handleResizes = () => {
   const initialWidth = window.innerWidth;
-  const projectDesc = document.querySelectorAll(".project-desc");
+  const inputContainer = document.getElementById("name-email-container");
+  const form = document.getElementById("form");
+  const projectsGrid = document.getElementById("projects-grid");
+
+  // Name Input
+  const nameInput = document.createElement("input");
+  nameInput.type = "text";
+  nameInput.name = "name";
+  nameInput.id = "name";
+  nameInput.placeholder = "Name";
+  nameInput.required = true;
+  nameInput.className =
+    "py-3 px-4 block h-14 w-full border-2 border-gray-200 rounded-md text-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500";
+
+  // Email Input
+  const emailInput = document.createElement("input");
+  emailInput.type = "email";
+  emailInput.name = "email";
+  emailInput.id = "email";
+  emailInput.placeholder = "Email";
+  emailInput.required = true;
+  emailInput.className =
+    "py-3 px-4 h-14 w-full border-2 border-gray-200 rounded-md text-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500";
+
+  const setInputContainer = (width) => {
+    if (width > 1024) {
+      console.log("hot")
+      inputContainer.append(nameInput);
+      inputContainer.append(emailInput);
+    } else {
+      console.log("potato")
+      form.prepend(emailInput);
+      form.prepend(nameInput);
+    }
+  };
 
   const setProjects = (width) => {
+    projectsGrid.innerHTML = null;
     projects.forEach((project, i) => {
-      if (width < 1280) {
-        projectDesc[i].innerText = project.shortDesc;
+      const projectCard = document.createElement("div");
+      projectCard.id = project.id;
+      projectCard.className =
+        "flex flex-col xl:flex-row items-center h-30-rem w-4/5 mx-auto border shadow-sm rounded-xl bg-white box-content p-2";
+      projectsGrid.append(projectCard);
+
+      const imgContainer = document.createElement("div");
+      imgContainer.className = "flex justify-center items-center w-8/12";
+
+      const img = document.createElement("img");
+      img.className = "w-8/12 h-5/6 border shadow-lg rounded-xl";
+      img.src = project.imgSrc;
+      img.alt = project.title;
+      imgContainer.append(img);
+
+      const textContainer = document.createElement("div");
+      textContainer.className = "w-4/12";
+
+      const textContent = document.createElement("div");
+      textContent.className = "p-4 h-full sm:p-7";
+      textContainer.append(textContent);
+
+      if (i % 2 !== 0 && width > 1280) {
+        projectCard.append(textContainer);
+        projectCard.append(imgContainer);
       } else {
-        projectDesc[i].innerText = project.fullDesc;
+        projectCard.append(imgContainer);
+        projectCard.append(textContainer);
       }
+
+      const projectTitle = document.createElement("h3");
+      projectTitle.className = "text-lg font-bold text-gray-800";
+      projectTitle.innerText = project.title;
+      textContent.append(projectTitle);
+
+      const projectDescription = document.createElement("p");
+      projectDescription.className =
+        "my-2 text-gray-800 dark:text-gray-400 project-desc";
+      textContent.append(projectDescription);
+
+      if (width < 1280) {
+        projectDescription.innerHTML = project.shortDesc;
+      } else {
+        projectDescription.innerHTML = project.fullDesc;
+      }
+
+      const linksContainer = document.createElement("ul");
+      linksContainer.className = "flex gap-x-3";
+      textContent.append(linksContainer);
+
+      const codeLink = document.createElement("li");
+      const codeAnchor = document.createElement("a");
+      codeAnchor.href = project.codeLink;
+      codeAnchor.innerHTML = `Code <i class="fa-brands fa-github fa-lg"></i>`;
+      codeLink.append(codeAnchor);
+      linksContainer.append(codeLink);
+
+      const demoLink = document.createElement("li");
+      const demoAnchor = document.createElement("a");
+      demoAnchor.href = project.demoLink;
+      demoAnchor.innerHTML = `Live Demo <i class="fa-solid fa-arrow-up-right-from-square fa-lg"></i>`;
+      demoLink.append(demoAnchor);
+      linksContainer.append(demoLink);
     });
   };
+
   window.addEventListener("resize", () => {
     const width = window.innerWidth;
     setProjects(width);
+    setInputContainer(width);
   });
 
   setProjects(initialWidth);
+  setInputContainer(initialWidth);
 };
 
 export default initializePortfolio;

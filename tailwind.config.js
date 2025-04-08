@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       height: {
         "30-rem": "25rem",
+        "90-per": "90%"
       },
       width: {
         "49-percent": "49%",
