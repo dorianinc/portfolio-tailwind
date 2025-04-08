@@ -213,7 +213,7 @@ const createAboutSection = () => {
   section.id = "about-me";
 
   const sectionInner = document.createElement("div");
-  sectionInner.className = "mx-auto 2xl:w-8/12 w-60-rem";
+  sectionInner.className = "mx-auto lg:w-8/12";
   section.append(sectionInner);
 
   const sectionFlex = document.createElement("div");
@@ -236,17 +236,17 @@ const createAboutSection = () => {
 
   const aboutHeader = document.createElement("h2");
   aboutHeader.className = "text-2xl text-blue-500 font-bold tracking-tight";
-  // aboutHeader.innerText = "About Me";
+  aboutHeader.innerText = "About Me";
   textContainer.append(aboutHeader);
 
   const subHeader = document.createElement("h2");
   subHeader.className = "text-xl font-bold tracking-tight";
-  // subHeader.innerText = "Exploring My Journey: From A to Z";
+  subHeader.innerText = "Exploring My Journey: From A to Z";
   textContainer.append(subHeader);
 
   const aboutText = document.createElement("p");
   aboutText.className = "mt-6 text-lg leading-6 text-gray-600";
-  // aboutText.innerHTML = `My curiosity for computers sparked a lifelong passion for technology that has led me to pursue a career in software engineering. This interest evolved into a deep fascination with web development, particularly in the realm of software engineering. Through both formal education and hands-on projects, I've honed my skills in various technologies and programming languages, from HTML and CSS to JavaScript and Python. My journey is a testament to the power of learning and growth, and I'm excited to continue exploring new challenges and opportunities in the ever-evolving field of technology.`;
+  aboutText.innerHTML = `My curiosity for computers sparked a lifelong passion for technology that has led me to pursue a career in software engineering. This interest evolved into a deep fascination with web development, particularly in the realm of software engineering. Through both formal education and hands-on projects, I've honed my skills in various technologies and programming languages, from HTML and CSS to JavaScript and Python. My journey is a testament to the power of learning and growth, and I'm excited to continue exploring new challenges and opportunities in the ever-evolving field of technology.`;
   textContainer.append(aboutText);
 
   return section;
