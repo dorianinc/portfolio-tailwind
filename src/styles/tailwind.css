@@ -995,11 +995,6 @@ video {
   padding-bottom: 1rem;
 }
 
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -1013,6 +1008,11 @@ video {
 .py-7 {
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pl-5 {
@@ -1188,10 +1188,6 @@ video {
     margin-top: 0px;
   }
 
-  .sm\:flex {
-    display: flex;
-  }
-
   .sm\:flex-nowrap {
     flex-wrap: nowrap;
   }
@@ -1219,10 +1215,6 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:flex {
-    display: flex;
-  }
-
   .md\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -1273,11 +1265,6 @@ video {
 
   .lg\:justify-between {
     justify-content: space-between;
-  }
-
-  .lg\:px-10 {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
   }
 
   .lg\:text-left {

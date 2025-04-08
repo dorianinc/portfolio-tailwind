@@ -31,7 +31,7 @@ const createNavbar = () => {
   header.append(nav);
 
   const home = document.createElement("a");
-  home.className = "flex-none text-xl font-semibold hover:text-blue-500";
+  home.className = "text-xl font-semibold hover:text-blue-500";
   home.href = "/";
   home.innerText = "dorianmacias.dev";
   nav.append(home);
@@ -40,7 +40,8 @@ const createNavbar = () => {
   linksList.className = "hidden lg:flex flex-row items-center gap-5 potato";
 
   const dropDownMenu = document.createElement("div");
-  dropDownMenu.className = "lg:hidden fa-solid fa-bars fa-2xl";
+  dropDownMenu.className = "block lg:hidden";
+  dropDownMenu.innerHTML = '<i class="fa-solid fa-bars fa-2xl"></i>';
 
   const pageLinks = [
     { url: "#about-me", text: "About" },
