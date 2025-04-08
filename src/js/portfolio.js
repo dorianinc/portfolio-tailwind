@@ -209,7 +209,7 @@ const createIntroSection = () => {
 // About Section
 const createAboutSection = () => {
   const section = document.createElement("section");
-  section.className = "h-full px-2 py-24";
+  section.className = "h-full px-6 py-24";
   section.id = "about-me";
 
   const sectionInner = document.createElement("div");
@@ -217,7 +217,7 @@ const createAboutSection = () => {
   section.append(sectionInner);
 
   const sectionFlex = document.createElement("div");
-  sectionFlex.className = "flex justify-between gap-x-5 w-full";
+  sectionFlex.className = "flex justify-between gap-10 w-full";
   sectionInner.append(sectionFlex);
 
   const imgContainer = document.createElement("div");
@@ -355,7 +355,7 @@ const createProjectsSection = () => {
 const createContactMeSection = () => {
   const section = document.createElement("section");
   section.id = "contact-me";
-  section.className = "px-2 py-24 h-full";
+  section.className = "h-full px-6 py-24";
 
   const container = document.createElement("div");
   container.className = "mx-auto w-full lg:w-5/6 xl:w-3/4";
