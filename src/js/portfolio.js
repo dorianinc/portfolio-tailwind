@@ -18,7 +18,6 @@ const initializePortfolio = () => {
 
   handleResizes();
 };
-
 // Navbar Creation
 const createNavbar = () => {
   const header = document.createElement("header");
@@ -36,41 +35,71 @@ const createNavbar = () => {
   home.innerText = "dorianmacias.dev";
   nav.append(home);
 
-  const linksList = document.createElement("div");
-  linksList.className = "hidden lg:flex flex-row items-center gap-5 potato";
+  const linksBar = document.createElement("div");
+  linksBar.className = "hidden lg:flex flex-row items-center gap-5 potato";
+
+  const dropDownButton = document.createElement("div");
+  dropDownButton.className =
+    "relative block lg:hidden hover:cursor-pointer hover:text-blue-500";
+  dropDownButton.innerHTML = '<i class="fa-solid fa-bars fa-2xl"></i>';
+  dropDownButton.setAttribute("tabindex", "0");
 
   const dropDownMenu = document.createElement("div");
-  dropDownMenu.className = "block lg:hidden";
-  dropDownMenu.innerHTML = '<i class="fa-solid fa-bars fa-2xl"></i>';
+  dropDownMenu.id = "drop-down-menu";
+  dropDownMenu.className =
+    "hidden absolute w-xl shadow-lg z-50 top-7 right-2 rounded-md bg-gray-100 overflow-hidden";
+  dropDownButton.append(dropDownMenu);
 
   const pageLinks = [
     { url: "#about-me", text: "About" },
     { url: "#projects", text: "Projects" },
     { url: "#contact-me", text: "Contact" },
-    // { url: "/apps", text: "The App Counter" },
   ];
 
   pageLinks.forEach((link) => {
-    const linkItem = document.createElement("a");
+    const barLink = document.createElement("a");
+    barLink.href = link.url;
+    barLink.className = "font-medium text-lg text-gray-950 hover:text-blue-500";
+    barLink.innerText = link.text;
+    linksBar.append(barLink);
 
-    if (link.url === "/apps") {
-      const divider = document.createElement("span");
+    // if (link.url === "/apps") {
+    //   const divider = document.createElement("span");
 
-      divider.id = "divider";
-      linkItem.id = "app-counter";
-      divider.innerText = "|";
-      linkItem.append(divider);
-    }
+    //   divider.id = "divider";
+    //   linkItem.id = "app-counter";
+    //   divider.innerText = "|";
+    //   linkItem.append(divider);
+    // }
 
-    linkItem.href = link.url;
-    linkItem.className = "font-medium text-lg text-gray-950 hover:text-blue-500";
-    linkItem.innerText = link.text;
-    linksList.append(linkItem);
+    const dropLink = document.createElement("a");
+    dropLink.href = link.url;
+    dropLink.className =
+      "block font-medium text-lg text-gray-950 hover:text-blue-500 px-4 py-2 hover:bg-slate-200";
+    dropLink.innerText = link.text;
+    dropDownMenu.append(dropLink);
   });
 
+  // Toggle dropdown visibility
+  dropDownButton.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent this click from bubbling to document
+    dropDownMenu.classList.toggle("hidden");
+  });
 
-  nav.append(dropDownMenu);
-  nav.append(linksList);
+  // // Prevent clicks inside the menu from closing menu
+  // dropDownMenu.addEventListener("click", (e) => {
+  //   e.stopPropagation();
+  // });
+
+  // Close dropdown on any outside click
+  document.addEventListener("click", (e) => {
+    if (!dropDownButton.contains(e.target)) {
+      dropDownMenu.classList.add("hidden");
+    }
+  });
+
+  nav.append(dropDownButton);
+  nav.append(linksBar);
   return header;
 };
 
@@ -81,11 +110,13 @@ const createIntroSection = () => {
   section.id = "intro";
 
   const sectionInner = document.createElement("div");
-  sectionInner.className = "w-full lg:w-75-rem mx-auto px-2 py-10 lg:py-32 flex flex-col justify-center";
+  sectionInner.className =
+    "w-full lg:w-75-rem mx-auto px-2 py-10 lg:py-32 flex flex-col justify-center";
   section.append(sectionInner);
 
   const sectionFlex = document.createElement("div");
-  sectionFlex.className = "w-full flex flex-col-reverse lg:flex-row lg:justify-between gap-10 lg:gap-30 lx:p-10 box-content";
+  sectionFlex.className =
+    "w-full flex flex-col-reverse lg:flex-row lg:justify-between gap-10 lg:gap-30 lx:p-10 box-content";
   sectionInner.append(sectionFlex);
 
   const sectionIntro = document.createElement("div");
@@ -99,13 +130,15 @@ const createIntroSection = () => {
   sectionIntro.append(sectionHeader);
 
   const sectionSubText = document.createElement("p");
-  sectionSubText.className = "lg:mt-6 lg:text-lg leading-8 text-gray-600 text-center lg:text-left";
+  sectionSubText.className =
+    "lg:mt-6 lg:text-lg leading-8 text-gray-600 text-center lg:text-left";
   sectionSubText.innerText =
     "Hi, I'm Dorian Macias. I am passionate about the outdoors, dogs, sleeping and car karaoke.";
   sectionIntro.append(sectionSubText);
 
   const sectionLocation = document.createElement("p");
-  sectionLocation.className = "lg:mt-6 mb-3 text-lg leading-8 text-gray-600 text-center lg:text-left";
+  sectionLocation.className =
+    "lg:mt-6 mb-3 text-lg leading-8 text-gray-600 text-center lg:text-left";
   sectionLocation.innerText = "Milpitas, California. 📍";
   sectionIntro.append(sectionLocation);
 
@@ -155,7 +188,7 @@ const createIntroSection = () => {
   sectionInner.append(techStackContainer);
 
   const techStackTitle = document.createElement("p");
-  techStackTitle.className ="hidden lg:block"
+  techStackTitle.className = "hidden lg:block";
   techStackTitle.innerText = "Tech Stack |";
   techStackContainer.append(techStackTitle);
 
@@ -301,7 +334,8 @@ const createProjectsSection = () => {
     projectsGrid.append(projectCard);
 
     const imgContainer = document.createElement("div");
-    imgContainer.className = "flex justify-center items-center w-5/6 h-full min-w-[210px] max-w-[700px]";
+    imgContainer.className =
+      "flex justify-center items-center w-5/6 h-full min-w-[210px] max-w-[700px]";
 
     const img = document.createElement("img");
     img.className = "border shadow-lg rounded-xl";
@@ -329,23 +363,23 @@ const createProjectsSection = () => {
       "my-2 text-gray-800 dark:text-gray-400 project-desc";
     textContent.append(projectDescription);
 
-    const linksContainer = document.createElement("ul");
-    linksContainer.className = "flex justify-center gap-x-3";
-    textContent.append(linksContainer);
+    const dropDownMenu = document.createElement("ul");
+    dropDownMenu.className = "flex justify-center gap-x-3";
+    textContent.append(dropDownMenu);
 
     const codeLink = document.createElement("li");
     const codeAnchor = document.createElement("a");
     codeAnchor.href = project.codeLink;
     codeAnchor.innerHTML = `Code <i class="fa-brands fa-github fa-lg"></i>`;
     codeLink.append(codeAnchor);
-    linksContainer.append(codeLink);
+    dropDownMenu.append(codeLink);
 
     const demoLink = document.createElement("li");
     const demoAnchor = document.createElement("a");
     demoAnchor.href = project.demoLink;
     demoAnchor.innerHTML = `Live Demo <i class="fa-solid fa-arrow-up-right-from-square fa-lg"></i>`;
     demoLink.append(demoAnchor);
-    linksContainer.append(demoLink);
+    dropDownMenu.append(demoLink);
   });
 
   return section;
@@ -399,7 +433,7 @@ const createContactMeSection = () => {
   nameInput.required = true;
   nameInput.className =
     "py-3 px-4 block h-14 w-full border-2 border-gray-200 rounded-md text-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500";
-    inputContainer.append(nameInput);
+  inputContainer.append(nameInput);
 
   // Email Input
   const emailInput = document.createElement("input");
@@ -410,7 +444,7 @@ const createContactMeSection = () => {
   emailInput.required = true;
   emailInput.className =
     "py-3 px-4 h-14 w-full border-2 border-gray-200 rounded-md text-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500";
-    inputContainer.append(emailInput);
+  inputContainer.append(emailInput);
 
   // Subject Input
   const subjectInput = document.createElement("input");
@@ -420,9 +454,8 @@ const createContactMeSection = () => {
   subjectInput.placeholder = "Subject";
   subjectInput.required = true;
   subjectInput.className =
-  "py-3 px-4 block h-14 w-full border-2 border-gray-200 rounded-md text-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500";
+    "py-3 px-4 block h-14 w-full border-2 border-gray-200 rounded-md text-md focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500";
   form.append(subjectInput);
-
 
   // Message Textarea
   const messageTextarea = document.createElement("textarea");
