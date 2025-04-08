@@ -76,36 +76,36 @@ const createIntroSection = () => {
   section.id = "intro";
 
   const sectionInner = document.createElement("div");
-  sectionInner.className = "mx-auto w-60-rem px-2 py-32";
+  sectionInner.className = "mx-auto w-full lg:w-60-rem px-2 py-32 flex flex-col justify-center";
   section.append(sectionInner);
 
   const sectionFlex = document.createElement("div");
-  sectionFlex.className = "w-full flex justify-between";
+  sectionFlex.className = "w-full flex flex-col-reverse lg:flex-row lg:justify-between gap-10 lx:p-10 box-content";
   sectionInner.append(sectionFlex);
 
   const sectionIntro = document.createElement("div");
-  sectionIntro.className = "w-1/2";
+  sectionIntro.className = "lg:w-1/2";
   sectionFlex.append(sectionIntro);
 
   const sectionHeader = document.createElement("h1");
   sectionHeader.className =
-    "text-2xl font-bold tracking-tight text-gray-900 sm:text-6xl";
+    "text-5xl font-bold tracking-tight text-gray-900 text-center lg:text-left";
   sectionHeader.innerText = "Full Stack Web Developer 👋🏽";
   sectionIntro.append(sectionHeader);
 
   const sectionSubText = document.createElement("p");
-  sectionSubText.className = "mt-6 text-lg leading-8 text-gray-600";
+  sectionSubText.className = "lg:mt-6 lg:text-lg leading-8 text-gray-600 text-center lg:text-left";
   sectionSubText.innerText =
     "Hi, I'm Dorian Macias. I am passionate about the outdoors, dogs, sleeping and car karaoke.";
   sectionIntro.append(sectionSubText);
 
   const sectionLocation = document.createElement("p");
-  sectionLocation.className = "mt-6 mb-3 text-lg leading-8 text-gray-600";
+  sectionLocation.className = "lg:mt-6 mb-3 text-lg leading-8 text-gray-600 text-center lg:text-left";
   sectionLocation.innerText = "Milpitas, California. 📍";
   sectionIntro.append(sectionLocation);
 
   const linkList = document.createElement("ul");
-  linkList.className = "flex gap-x-3";
+  linkList.className = "flex gap-x-3 justify-center lg:justfify-start";
   sectionIntro.append(linkList);
 
   const socialLinks = [
@@ -146,10 +146,11 @@ const createIntroSection = () => {
 
   const techStackContainer = document.createElement("div");
   techStackContainer.className =
-    "flex items-center justify-start gap-x-6 mt-10";
+    "flex items-center justify-center lg:justify-start gap-x-6 mt-10";
   sectionInner.append(techStackContainer);
 
   const techStackTitle = document.createElement("p");
+  techStackTitle.className ="hidden lg:block"
   techStackTitle.innerText = "Tech Stack |";
   techStackContainer.append(techStackTitle);
 
