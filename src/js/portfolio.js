@@ -81,11 +81,11 @@ const createIntroSection = () => {
   section.id = "intro";
 
   const sectionInner = document.createElement("div");
-  sectionInner.className = "w-full lg:w-60-rem mx-auto px-2 py-10 lg:py-32 flex flex-col justify-center";
+  sectionInner.className = "w-full lg:w-75-rem mx-auto px-2 py-10 lg:py-32 flex flex-col justify-center";
   section.append(sectionInner);
 
   const sectionFlex = document.createElement("div");
-  sectionFlex.className = "w-full flex flex-col-reverse lg:flex-row lg:justify-between gap-10 lx:p-10 box-content";
+  sectionFlex.className = "w-full flex flex-col-reverse lg:flex-row lg:justify-between gap-10 lg:gap-30 lx:p-10 box-content";
   sectionInner.append(sectionFlex);
 
   const sectionIntro = document.createElement("div");
