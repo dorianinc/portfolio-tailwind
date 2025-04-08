@@ -86,7 +86,7 @@ const createNavbar = () => {
     dropDownMenu.classList.toggle("hidden");
   });
 
-  // // Prevent clicks inside the menu from closing menu
+  // // Prevent clicks inside the menu from closing menu 
   // dropDownMenu.addEventListener("click", (e) => {
   //   e.stopPropagation();
   // });
@@ -267,13 +267,13 @@ const createAboutSection = () => {
   textContainer.className = "w-9/12";
   sectionFlex.append(textContainer);
 
-  const aboutHeader = document.createElement("h2");
-  aboutHeader.className = "text-2xl text-blue-500 font-bold tracking-tight";
-  aboutHeader.innerText = "About Me";
-  textContainer.append(aboutHeader);
+  const mainHeader = document.createElement("h2");
+  mainHeader.className = "text-2xl text-blue-500 font-bold tracking-tight";
+  mainHeader.innerText = "About Me";
+  textContainer.append(mainHeader);
 
   const subHeader = document.createElement("h2");
-  subHeader.className = "text-xl font-bold tracking-tight";
+  subHeader.className = "text-lg font-bold tracking-tight";
   subHeader.innerText = "Exploring My Journey: From A to Z";
   textContainer.append(subHeader);
 
@@ -303,15 +303,15 @@ const createProjectsSection = () => {
   headerContent.className = "mb-5";
   headerContainer.append(headerContent);
 
-  const mainTitle = document.createElement("h2");
-  mainTitle.className = "text-2xl text-blue-500 font-bold tracking-tight";
-  mainTitle.innerText = "Projects";
-  headerContent.append(mainTitle);
+  const mainHeader = document.createElement("h2");
+  mainHeader.className = "text-2xl text-blue-500 font-bold tracking-tight";
+  mainHeader.innerText = "Projects";
+  headerContent.append(mainHeader);
 
-  const subTitle = document.createElement("h2");
-  subTitle.className = "text-xl font-bold tracking-tight";
-  subTitle.innerText = "Each project is made with a fine attention to detail";
-  headerContent.append(subTitle);
+  const subHeader = document.createElement("h2");
+  subHeader.className = "text-lg font-bold tracking-tight";
+  subHeader.innerText = "Each project is made with a fine attention to detail";
+  headerContent.append(subHeader);
 
   const projectsGrid = document.createElement("div");
   projectsGrid.id = "projects-grid";
@@ -400,16 +400,16 @@ const createContactMeSection = () => {
   headerContainer.className = "mb-5";
   container.append(headerContainer);
 
-  const mainTitle = document.createElement("h2");
-  mainTitle.className = "text-2xl text-blue-500 font-bold tracking-tight";
-  mainTitle.innerText = "Contact Me";
-  headerContainer.append(mainTitle);
+  const mainHeader = document.createElement("h2");
+  mainHeader.className = "text-2xl text-blue-500 font-bold tracking-tight";
+  mainHeader.innerText = "Contact Me";
+  headerContainer.append(mainHeader);
 
-  const subTitle = document.createElement("h2");
-  subTitle.className = "text-xs md:text-xl font-bold tracking-tight";
-  subTitle.innerText =
+  const subHeader = document.createElement("h2");
+  subHeader.className = "text-lg font-bold tracking-tight";
+  subHeader.innerText =
     "I'm always open to connect with fellow tech enthusiasts and explore new opportunities. Please don't hesitate to reach out!";
-  headerContainer.append(subTitle);
+  headerContainer.append(subHeader);
 
   const form = document.createElement("form");
   form.id = "form";
