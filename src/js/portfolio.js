@@ -295,7 +295,7 @@ const createProjectsSection = () => {
     projectsGrid.append(projectCard);
 
     const imgContainer = document.createElement("div");
-    imgContainer.className = "flex justify-center items-center w-8/12 h-full min-w-[210px] max-w-[700px]";
+    imgContainer.className = "flex justify-center items-center w-full h-full min-w-[210px] max-w-[700px]";
 
     const img = document.createElement("img");
     img.className = "border shadow-lg rounded-xl";

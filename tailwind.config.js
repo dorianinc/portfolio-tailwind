@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,js,jsx}",
-    "./apps/**/*.{html,js,jsx}",
-  ], 
+    "./src/**/*.{html,js,jsx,ts,tsx,css}",  // Scan all relevant files
+    "./apps/**/*.{html,js,jsx,ts,tsx}"       // Ensure it catches files in 'apps'
+  ],
   theme: {
     extend: {
       height: {
