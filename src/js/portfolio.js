@@ -23,10 +23,10 @@ const initializePortfolio = () => {
 const createNavbar = () => {
   const header = document.createElement("header");
   header.className =
-    "sticky top-0 flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-4 shadow-md";
+    "sticky top-0 z-50 w-full flex bg-white text-sm py-7 shadow-md";
 
   const nav = document.createElement("nav");
-  nav.className = "flex items-center justify-between w-full mx-auto px-10 my-3";
+  nav.className = "w-full px-2 md:px-10 flex items-center justify-between ";
   nav.setAttribute("aria-label", "Global");
   header.append(nav);
 
@@ -36,9 +36,11 @@ const createNavbar = () => {
   home.innerText = "dorianmacias.dev";
   nav.append(home);
 
-  const linksContainer = document.createElement("div");
-  linksContainer.className =
-    "flex flex-row items-center gap-5 mt-5 sm:justify-end sm:mt-0 sm:pl-5";
+  const linksList = document.createElement("div");
+  linksList.className = "hidden lg:flex flex-row items-center gap-5 potato";
+
+  const dropDownMenu = document.createElement("div");
+  dropDownMenu.className = "lg:hidden fa-solid fa-bars fa-2xl";
 
   const pageLinks = [
     { url: "#about-me", text: "About" },
@@ -48,24 +50,26 @@ const createNavbar = () => {
   ];
 
   pageLinks.forEach((link) => {
-    const aTag = document.createElement("a");
+    const linkItem = document.createElement("a");
 
     if (link.url === "/apps") {
       const divider = document.createElement("span");
 
       divider.id = "divider";
+      linkItem.id = "app-counter";
       divider.innerText = "|";
-      linksContainer.append(divider);
-      aTag.id = "app-counter";
+      linkItem.append(divider);
     }
 
-    aTag.href = link.url;
-    aTag.className = "font-medium text-lg text-gray-950 hover:text-blue-500";
-    aTag.innerText = link.text;
-    linksContainer.append(aTag);
+    linkItem.href = link.url;
+    linkItem.className = "font-medium text-lg text-gray-950 hover:text-blue-500";
+    linkItem.innerText = link.text;
+    linksList.append(linkItem);
   });
 
-  nav.append(linksContainer);
+
+  nav.append(dropDownMenu);
+  nav.append(linksList);
   return header;
 };
 
@@ -105,7 +109,7 @@ const createIntroSection = () => {
   sectionIntro.append(sectionLocation);
 
   const linkList = document.createElement("ul");
-  linkList.className = "flex gap-x-3 justify-center lg:justfify-start";
+  linkList.className = "flex gap-x-3 justify-center lg:justify-start";
   sectionIntro.append(linkList);
 
   const socialLinks = [
@@ -367,7 +371,7 @@ const createContactMeSection = () => {
   headerContainer.append(mainTitle);
 
   const subTitle = document.createElement("h2");
-  subTitle.className = "text:-xs md:text-xl font-bold tracking-tight";
+  subTitle.className = "text-xs md:text-xl font-bold tracking-tight";
   subTitle.innerText =
     "I'm always open to connect with fellow tech enthusiasts and explore new opportunities. Please don't hesitate to reach out!";
   headerContainer.append(subTitle);
