@@ -26,7 +26,7 @@ const createNavbar = () => {
     "sticky top-0 z-50 w-full flex bg-white text-sm py-7 shadow-md";
 
   const nav = document.createElement("nav");
-  nav.className = "w-full px-2 md:px-10 flex items-center justify-between ";
+  nav.className = "w-full px-4 md:px-10 flex items-center justify-between ";
   nav.setAttribute("aria-label", "Global");
   header.append(nav);
 
@@ -81,7 +81,7 @@ const createIntroSection = () => {
   section.id = "intro";
 
   const sectionInner = document.createElement("div");
-  sectionInner.className = "mx-auto w-full lg:w-60-rem px-2 py-32 flex flex-col justify-center";
+  sectionInner.className = "w-full lg:w-60-rem mx-auto px-2 py-10 lg:py-32 flex flex-col justify-center";
   section.append(sectionInner);
 
   const sectionFlex = document.createElement("div");
@@ -236,17 +236,17 @@ const createAboutSection = () => {
 
   const aboutHeader = document.createElement("h2");
   aboutHeader.className = "text-2xl text-blue-500 font-bold tracking-tight";
-  aboutHeader.innerText = "About Me";
+  // aboutHeader.innerText = "About Me";
   textContainer.append(aboutHeader);
 
   const subHeader = document.createElement("h2");
   subHeader.className = "text-xl font-bold tracking-tight";
-  subHeader.innerText = "Exploring My Journey: From A to Z";
+  // subHeader.innerText = "Exploring My Journey: From A to Z";
   textContainer.append(subHeader);
 
   const aboutText = document.createElement("p");
   aboutText.className = "mt-6 text-lg leading-6 text-gray-600";
-  aboutText.innerHTML = `My curiosity for computers sparked a lifelong passion for technology that has led me to pursue a career in software engineering. This interest evolved into a deep fascination with web development, particularly in the realm of software engineering. Through both formal education and hands-on projects, I've honed my skills in various technologies and programming languages, from HTML and CSS to JavaScript and Python. My journey is a testament to the power of learning and growth, and I'm excited to continue exploring new challenges and opportunities in the ever-evolving field of technology.`;
+  // aboutText.innerHTML = `My curiosity for computers sparked a lifelong passion for technology that has led me to pursue a career in software engineering. This interest evolved into a deep fascination with web development, particularly in the realm of software engineering. Through both formal education and hands-on projects, I've honed my skills in various technologies and programming languages, from HTML and CSS to JavaScript and Python. My journey is a testament to the power of learning and growth, and I'm excited to continue exploring new challenges and opportunities in the ever-evolving field of technology.`;
   textContainer.append(aboutText);
 
   return section;
