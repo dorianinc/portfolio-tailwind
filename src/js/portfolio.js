@@ -106,7 +106,7 @@ const createNavbar = () => {
 // Intro Section
 const createIntroSection = () => {
   const section = document.createElement("section");
-  section.className = "bg-zinc-50 h-screen";
+  section.className = "bg-zinc-50 min-h-screen";
   section.id = "intro";
 
   const sectionInner = document.createElement("div");
