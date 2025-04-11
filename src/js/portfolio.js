@@ -36,7 +36,7 @@ const createNavbar = () => {
   nav.append(home);
 
   const linksBar = document.createElement("div");
-  linksBar.className = "hidden lg:flex flex-row items-center gap-5 potato";
+  linksBar.className = "hidden lg:flex flex-row items-center gap-5";
 
   const dropDownButton = document.createElement("div");
   dropDownButton.className =
@@ -111,7 +111,7 @@ const createIntroSection = () => {
 
   const sectionInner = document.createElement("div");
   sectionInner.className =
-    "w-full lg:w-75-rem mx-auto px-2 py-10 lg:py-32 flex flex-col justify-center";
+    "w-5/6 max-w-[75rem] mx-auto px-2 py-10 lg:py-32 flex flex-col justify-center";
   section.append(sectionInner);
 
   const sectionFlex = document.createElement("div");
@@ -184,7 +184,7 @@ const createIntroSection = () => {
 
   const techStackContainer = document.createElement("div");
   techStackContainer.className =
-    "flex items-center justify-center lg:justify-start gap-x-6 mt-10";
+    "flex flex-wrap items-center justify-center lg:justify-start gap-x-6 mt-10";
   sectionInner.append(techStackContainer);
 
   const techStackTitle = document.createElement("p");
@@ -198,20 +198,20 @@ const createIntroSection = () => {
       alt: "HTML 5",
       text: "HTML 5",
     },
-    // { src: "./assets/images/languages/css3.png", alt: "CSS 3", text: "CSS 3" },
-    // {
-    //   src: "./assets/images/languages/javascript.png",
-    //   alt: "Javascript",
-    //   text: "Javascript",
-    // },
-    // {
-    //   src: "./assets/images/languages/python.png",
-    //   alt: "Python",
-    //   text: "Python",
-    // },
-    // { src: "./assets/images/languages/react.png", alt: "React", text: "React" },
-    // { src: "./assets/images/languages/node.png", alt: "Node", text: "Node" },
-    // { src: "./assets/images/languages/flask.png", alt: "Flask", text: "Flask" },
+    { src: "./assets/images/languages/css3.png", alt: "CSS 3", text: "CSS 3" },
+    {
+      src: "./assets/images/languages/javascript.png",
+      alt: "Javascript",
+      text: "Javascript",
+    },
+    {
+      src: "./assets/images/languages/python.png",
+      alt: "Python",
+      text: "Python",
+    },
+    { src: "./assets/images/languages/react.png", alt: "React", text: "React" },
+    { src: "./assets/images/languages/node.png", alt: "Node", text: "Node" },
+    { src: "./assets/images/languages/flask.png", alt: "Flask", text: "Flask" },
   ];
 
   techStacks.forEach((stack) => {
@@ -250,7 +250,7 @@ const createAboutSection = () => {
   section.append(sectionInner);
 
   const sectionFlex = document.createElement("div");
-  sectionFlex.className = "flex justify-between gap-10 w-full";
+  sectionFlex.className = "flex flex-col lg:flex-row justify-between gap-10 w-full";
   sectionInner.append(sectionFlex);
 
   const imgContainer = document.createElement("div");
@@ -264,7 +264,7 @@ const createAboutSection = () => {
   imgContainer.append(aboutImg);
 
   const textContainer = document.createElement("div");
-  textContainer.className = "w-9/12";
+  textContainer.className = "lg:w-9/12 text-center lg:text-left";
   sectionFlex.append(textContainer);
 
   const mainHeader = document.createElement("h2");
