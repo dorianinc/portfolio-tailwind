@@ -120,7 +120,7 @@ const createIntroSection = () => {
   sectionInner.append(sectionFlex);
 
   const sectionIntro = document.createElement("div");
-  sectionIntro.className = "lg:w-1/2";
+  sectionIntro.className = "lg:w-1/2 flex flex-col gap-3";
   sectionFlex.append(sectionIntro);
 
   const sectionHeader = document.createElement("h1");
@@ -131,19 +131,19 @@ const createIntroSection = () => {
 
   const sectionSubText = document.createElement("p");
   sectionSubText.className =
-    "lg:mt-6 lg:text-lg leading-8 text-gray-600 text-center lg:text-left";
+    "text-lg text-gray-600 text-center lg:text-left";
   sectionSubText.innerText =
     "Hi, I'm Dorian Macias. I am passionate about the outdoors, dogs, sleeping and car karaoke.";
   sectionIntro.append(sectionSubText);
 
   const sectionLocation = document.createElement("p");
   sectionLocation.className =
-    "lg:mt-6 mb-3 text-lg leading-8 text-gray-600 text-center lg:text-left";
+    "text-lg text-gray-600 text-center lg:text-left";
   sectionLocation.innerText = "Milpitas, California. 📍";
   sectionIntro.append(sectionLocation);
 
   const linkList = document.createElement("ul");
-  linkList.className = "flex gap-x-3 justify-center lg:justify-start";
+  linkList.className = "flex gap-3 justify-center lg:justify-start";
   sectionIntro.append(linkList);
 
   const socialLinks = [
